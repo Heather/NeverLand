@@ -22,7 +22,7 @@ exampleAP = ServerData <$> newTVarIO mockPlugins
 -- | Prepoulated plugins
 mockPlugins :: Set Plugin
 mockPlugins = Set.fromList
-  [ Plugin "Viewer" "1234"
-  , Plugin "Fractures Projection" "2345"
-  , Plugin "Liver Resection" "3456"
+  [ Plugin "plugin 1" "1234"
+  , Plugin "plugin 2" "2345"
+  , Plugin "plugin 3" "3456"
   ]
