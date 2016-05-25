@@ -1,0 +1,29 @@
+cmd: cabal
+args:
+  - install
+  - -f wai
+  - -f gen
+name: cabal
+targets:
+  minimal:
+    cmd: cabal
+    args:
+      - install
+    name: minimal
+  force:
+    cmd: cabal
+    args:
+      - install
+      - --force-reinstalls
+    name: force
+  doc:
+    cmd: NeverLandGen.exe -d Templates
+    cwd: F:\P\thridparty\NeverLand\dist\build\NeverLandGen
+    args:
+      - -d Templates
+      - -s F:\P\thridparty\NeverLand\Templates
+    name: doc
+  run:
+    cmd: NeverLandWai.exe
+    cwd: F:\P\thridparty\NeverLand\dist\build\NeverLandWai
+    name: run

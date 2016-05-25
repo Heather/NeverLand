@@ -1,0 +1,29 @@
+name: APApi
+version: 0.1
+cabal-version: >=1.8
+build-type: Simple
+license: UnspecifiedLicense
+
+library
+    exposed-modules:
+        Restexample.Client.Plugin
+    hs-source-dirs: src
+    build-depends:
+        base ==4.*,
+        rest-types ==1.14.*,
+        rest-client ==0.5.*,
+        text >=0.10 && <1.3,
+        NeverLandAPI,
+        rest-stringmap ==0.2.*
+
+Executable      APITest
+  Main-Is:      APITest.hs
+  hs-source-dirs: src
+  build-depends:
+      base ==4.*,
+      rest-types ==1.14.*,
+      rest-client ==0.5.*,
+      text >=0.10 && <1.3,
+      NeverLandAPI,
+      APApi,
+      rest-stringmap ==0.2.*
