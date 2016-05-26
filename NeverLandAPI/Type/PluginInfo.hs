@@ -1,18 +1,16 @@
-{-# LANGUAGE
-    DeriveDataTypeable
-  , DeriveGeneric
-  #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
 module Type.PluginInfo where
 
-import Data.Aeson
-import Data.JSON.Schema
-import Data.Typeable
-import GHC.Generics
-import Generics.Generic.Aeson
-import Generics.XmlPickler
-import Text.XML.HXT.Arrow.Pickle
+import           Data.Aeson
+import           Data.JSON.Schema
+import           Data.Typeable
+import           Generics.Generic.Aeson
+import           Generics.XmlPickler
+import           GHC.Generics
+import           Text.XML.HXT.Arrow.Pickle
 
-import qualified Type.Plugin as Plugin
+import qualified Type.Plugin               as Plugin
 
 data PluginInfo = PluginInfo
   { name :: Plugin.Name

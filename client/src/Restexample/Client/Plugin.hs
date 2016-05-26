@@ -1,9 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# OPTIONS_GHC -fno-warn-unused-imports#-}
 module Restexample.Client.Plugin where
-import Rest.Client.Internal
-import qualified Rest.Types.Void
+import           Rest.Client.Internal
 import qualified Rest.Types.Container
+import qualified Rest.Types.Void
 import qualified Type.PluginInfo
 
 type Identifier = String
@@ -15,7 +15,7 @@ list ::
        ApiStateC m =>
        [(String, String)] ->
          m (ApiResponse Rest.Types.Void.Void
-              (Rest.Types.Container.List (Type.PluginInfo.PluginInfo)))
+              (Rest.Types.Container.List Type.PluginInfo.PluginInfo))
 list pList
   = let rHeaders
           = [(hAccept, "text/json"), (hContentType, "text/plain")]

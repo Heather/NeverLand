@@ -1,17 +1,15 @@
-{-# LANGUAGE
-    DeriveDataTypeable
-  , DeriveGeneric
-  #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
 module Type.Plugin where
 
-import Data.Aeson
-import Data.JSON.Schema
-import Data.Text (Text)
-import Data.Typeable
-import GHC.Generics
-import Generics.Generic.Aeson
-import Generics.XmlPickler
-import Text.XML.HXT.Arrow.Pickle
+import           Data.Aeson
+import           Data.JSON.Schema
+import           Data.Text                 (Text)
+import           Data.Typeable
+import           Generics.Generic.Aeson
+import           Generics.XmlPickler
+import           GHC.Generics
+import           Text.XML.HXT.Arrow.Pickle
 
 type Name = Text
 type Password = Text

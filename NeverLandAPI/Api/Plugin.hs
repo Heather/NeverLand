@@ -1,26 +1,26 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 module Api.Plugin (resource) where
 
-import Prelude.Compat
+import           Prelude.Compat
 
-import Control.Concurrent.STM (atomically, readTVar) -- modifyTVar
+import           Control.Concurrent.STM     (atomically, readTVar)
 -- import Control.Monad.Error.Class (throwError)
-import Control.Monad.Reader (ReaderT, asks)
-import Control.Monad.Trans (liftIO)
-import Control.Monad.Trans.Except (ExceptT)
+import           Control.Monad.Reader       (ReaderT, asks)
+import           Control.Monad.Trans        (liftIO)
+import           Control.Monad.Trans.Except (ExceptT)
 -- import Data.Set (Set)
 -- import qualified Data.Foldable as F
-import qualified Data.Set      as Set
-import qualified Data.Text     as T
+import qualified Data.Set                   as Set
+import qualified Data.Text                  as T
 
-import Rest
-import qualified Rest.Resource as R
+import           Rest
+import qualified Rest.Resource              as R
 
-import ApiTypes (APApi, ServerData (..))
-import Type.Plugin (Plugin)
-import Type.PluginInfo (PluginInfo (..))
-import qualified Type.Plugin     as Plugin
-import qualified Type.PluginInfo as PluginInfo
+import           ApiTypes                   (APApi, ServerData (..))
+import           Type.Plugin                (Plugin)
+import qualified Type.Plugin                as Plugin
+import           Type.PluginInfo            (PluginInfo (..))
+import qualified Type.PluginInfo            as PluginInfo
 
 -- | Plugin extends the root of the API with a reader containing the ways to identify a plugin in our URLs.
 -- Currently only by the plugin name.

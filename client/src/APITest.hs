@@ -1,8 +1,8 @@
-import Restexample.Client.Plugin as Plugin
+import           Restexample.Client.Plugin as Plugin
 
-import Rest.Client.Base
+import           Rest.Client.Base
 
-import Control.Monad
+import           Control.Monad
 
 runZ :: String -> ApiT IO a -> IO a
 runZ = flip runWithPort 3000

@@ -1,12 +1,12 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main (main) where
 
-import Network.Wai.Handler.Warp
-import Rest.Driver.Wai (apiToApplication)
+import           Network.Wai.Handler.Warp
+import           Rest.Driver.Wai          (apiToApplication)
 
-import Api (api)
-import ApiTypes (runAPApi)
-import Example (exampleAP)
+import           Api                      (api)
+import           ApiTypes                 (runAPApi)
+import           Example                  (exampleAP)
 
 main :: IO ()
 main = do

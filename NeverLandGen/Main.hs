@@ -1,8 +1,8 @@
 module Main (main) where
 
-import Rest.Gen.Types
 import qualified Rest.Gen        as Gen
 import qualified Rest.Gen.Config as Gen
+import           Rest.Gen.Types
 
 import qualified Api
 

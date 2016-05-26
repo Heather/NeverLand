@@ -1,10 +1,10 @@
 module Api where
 
-import ApiTypes (APApi)
+import           ApiTypes   (APApi)
 
 import qualified Api.Plugin as Plugin
 
-import Rest.Api
+import           Rest.Api
 -- import Rest
 
 -- import qualified Rest.Resource as R
