@@ -1,4 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE UnicodeSyntax     #-}
+
 module Main (main) where
 
 import           Network.Wai.Handler.Warp
@@ -8,7 +10,7 @@ import           Api                      (api)
 import           ApiTypes                 (runAPApi)
 import           Example                  (exampleAP)
 
-main :: IO ()
+main ∷ IO ()
 main = do
 
   -- Set up the server state for the blog and start warp.

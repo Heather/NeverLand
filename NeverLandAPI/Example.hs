@@ -1,5 +1,6 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE UnicodeSyntax     #-}
 
 module Example (exampleAP) where
 
@@ -15,11 +16,11 @@ import           ApiTypes               (ServerData (..))
 import           Type.Plugin            (Plugin (Plugin))
 
 -- Set up the server state
-exampleAP :: IO ServerData
+exampleAP ∷ IO ServerData
 exampleAP = ServerData <$> newTVarIO mockPlugins
 
 -- | Prepoulated plugins
-mockPlugins :: Set Plugin
+mockPlugins ∷ Set Plugin
 mockPlugins = Set.fromList
   [ Plugin "plugin 1" "1234"
   , Plugin "plugin 2" "2345"

@@ -1,5 +1,7 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE UnicodeSyntax      #-}
+
 module Type.Plugin where
 
 import           Data.Aeson

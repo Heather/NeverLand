@@ -1,4 +1,6 @@
 {-# LANGUAGE NoImplicitPrelude #-}
+{-# LANGUAGE UnicodeSyntax     #-}
+
 module Api.Plugin (resource) where
 
 import           Prelude.Compat
@@ -27,7 +29,7 @@ import qualified Type.PluginInfo            as PluginInfo
 type WithPlugin = ReaderT Plugin.Name APApi
 
 -- | Defines the /plugin api end-point.
-resource :: Resource APApi WithPlugin Plugin.Name () Void
+resource ∷ Resource APApi WithPlugin Plugin.Name () Void
 resource = mkResourceReader
   { R.name   = "plugin" -- Name of the HTTP path segment.
   , R.schema = withListing () $ named [("name", singleBy T.pack)]
@@ -35,14 +37,14 @@ resource = mkResourceReader
   -- , R.create = Just create -- PUT /plugin creates a new plugin
   }
 
-list :: ListHandler APApi
+list ∷ ListHandler APApi
 list = mkListing xmlJsonO handler
   where
-    handler :: Range -> ExceptT Reason_ APApi [PluginInfo]
+    handler ∷ Range → ExceptT Reason_ APApi [PluginInfo]
     handler r = do
       plgs <- liftIO . atomically . readTVar =<< asks plugins
       return . map toPluginInfo . take (count r) . drop (offset r) . Set.toList $ plgs
 
 -- | Convert a Plugin into a representation that is safe to show to the public.
-toPluginInfo :: Plugin -> PluginInfo
+toPluginInfo ∷ Plugin → PluginInfo
 toPluginInfo u = PluginInfo { PluginInfo.name = Plugin.name u }

@@ -1,5 +1,7 @@
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE NoImplicitPrelude          #-}
+{-# LANGUAGE UnicodeSyntax              #-}
+
 module ApiTypes where
 
 import           Prelude.Compat
@@ -17,7 +19,7 @@ data ServerData = ServerData
   { plugins :: TVar (Set Plugin)
   }
 
-newtype APApi a = APApi { unAPApi :: ReaderT ServerData IO a }
+newtype APApi α = APApi { unAPApi :: ReaderT ServerData IO α }
   deriving ( Applicative
            , Functor
            , Monad
@@ -25,5 +27,5 @@ newtype APApi a = APApi { unAPApi :: ReaderT ServerData IO a }
            , MonadReader ServerData
            )
 
-runAPApi :: ServerData -> APApi a -> IO a
+runAPApi ∷ ServerData → APApi α → IO α
 runAPApi serverdata = flip runReaderT serverdata . unAPApi

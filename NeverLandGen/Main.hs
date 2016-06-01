@@ -1,3 +1,5 @@
+{-# LANGUAGE UnicodeSyntax #-}
+
 module Main (main) where
 
 import qualified Rest.Gen        as Gen
@@ -6,7 +8,7 @@ import           Rest.Gen.Types
 
 import qualified Api
 
-main :: IO ()
+main ∷ IO ()
 main = do
   config <- Gen.configFromArgs "rest-example-gen"
   Gen.generate

@@ -1,5 +1,8 @@
-{-# LANGUAGE OverloadedStrings #-}
 {-# OPTIONS_GHC -fno-warn-unused-imports#-}
+
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE UnicodeSyntax     #-}
+
 module Restexample.Client.Plugin where
 import           Rest.Client.Internal
 import qualified Rest.Types.Container
@@ -8,12 +11,12 @@ import qualified Type.PluginInfo
 
 type Identifier = String
 
-readId :: Identifier -> [String]
+readId ∷ Identifier → [String]
 readId x = ["name", showUrl x]
 
-list ::
-       ApiStateC m =>
-       [(String, String)] ->
+list ∷
+       ApiStateC m ⇒
+       [(String, String)] →
          m (ApiResponse Rest.Types.Void.Void
               (Rest.Types.Container.List Type.PluginInfo.PluginInfo))
 list pList
